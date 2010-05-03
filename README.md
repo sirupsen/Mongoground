@@ -1,5 +1,5 @@
 # Mongoground #
-A simple Sinatra application using Mongo to store users, as well as retrieve them to show their usernames.
+A simple Sinatra application using Mongo to store users, as well as retrieve them to show information about them.
 
 I partly adapted the Rails structure for this application, as it seemed natural to seperate the model from the "core" Sinatra file.
 
