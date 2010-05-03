@@ -4,15 +4,34 @@
 
 <form method="post" action="/">
   <label for="username">Username</label>
-  <input type="text" name="username"/>
+  <input type="text" name="username" id="username" />
 
-  <input type="submit" value="Submit"/>
+  <label for="age">Age</label>
+  <select name="age" id="age">
+    <option>15</option>
+    <option>16</option>
+    <option>17</option>
+    <option>18</option>
+    <option>19</option>
+    <option>20</option>
+  </select>
+
+  <input type="submit" id="submit" value="Submit"/>
 </form>
 
 <h2>Users</h2>
 
-<% if @users %>
-  <% @users.each do |user| %>
-    <h3><%= user.username %></h3>
+<div id="users">
+  <% if @users %>
+    <% @users.each do |user| %>
+      <h3>
+        <%= user.username %> 
+        <% if user.age %>
+          (<%= user.age %>)
+        <% end %>
+      </h3>
+    <% end %>
   <% end %>
-<% end %>
+</div>
+
+<a href="#" id="clear">Clear me</a>

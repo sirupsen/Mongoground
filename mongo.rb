@@ -9,5 +9,9 @@ end
 
 post "/" do
   @user = User.create(params)
-  erb :index, {:layout => true}
 end
+
+get "/clear" do
+  User.delete_all
+end
+
