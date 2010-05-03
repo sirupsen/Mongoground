@@ -10,6 +10,6 @@ get "/" do
 end
 
 post "/" do
-  @user = User.create(:username => params[:username])
+  @user = User.create(params)
   erb :index, {:layout => true}
 end
