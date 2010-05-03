@@ -1,6 +1,8 @@
 require "sinatra"
 require "erb"
-require "models/person.rb"
+require "mongo"
+require "fileutils"
+require "models/user.rb"
 
 get "/" do
   @users = User.all
@@ -8,6 +10,6 @@ get "/" do
 end
 
 post "/" do
-  @user = User.create(params)
+  @user = User.create(:username => params[:username])
   erb :index, {:layout => true}
 end

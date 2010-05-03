@@ -1,9 +1,9 @@
-<% if @user %>
+<% if @user.username %>
   <p><%= @user.username %> has been added to the database!</p>
 <% end %>
 
 <form method="post" action="/">
-  <label for="username">Name</label>
+  <label for="username">Username</label>
   <input type="text" name="username"/>
 
   <input type="submit" value="Submit"/>
