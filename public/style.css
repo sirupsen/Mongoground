@@ -110,6 +110,7 @@ input, textarea {
   color #444;
   font-size: 16px;
   background-color: #fff;
+  text-align: left;
 }
 
 textarea {
