@@ -1,0 +1,20 @@
+<p>A simple application which uses MongoDB to save users to a database, and extracts users from this database and displaying information about each row.</p>
+
+<% if @user %>
+  <p><%= @user.username %> has been added to the database!</p>
+<% end %>
+
+<form method="post" action="/">
+  <label for="username">Name</label>
+  <input type="text" name="username"/>
+
+  <input type="submit" value="Submit"/>
+</form>
+
+<h2>Users</h2>
+
+<% if @users %>
+  <% @users.each do |user| %>
+    <h3><%= user.username %></h3>
+  <% end %>
+<% end %>
