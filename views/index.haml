@@ -9,6 +9,7 @@
 
   %label{:for => "age"} Age
   %select{:name => "age", :id => "age"}
+    %option
     - (15..25).each do |n|
       %option= n
   
