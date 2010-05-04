@@ -10,6 +10,7 @@ end
 
 get "/" do
   @users = User.all
+
   haml :index, {:layout => true}
 end
 

@@ -1,5 +1,5 @@
 # Mongoground #
-A simple Sinatra application using Mongo to store users, as well as retrieve them to show information about them.
+A simple Sinatra application using Mongo to store users, as well as retrieve them to show information about them. Has a bit of jQuery to spice it up!
 
 Oh yeah, Mongoground is "short for" Mongo Playground, both are lame names, but they suit the project.
 
