@@ -9,12 +9,17 @@ jQuery.fn.fadeThenSlideToggle = function(speed, easing, callback) {
 };
 
 $(function(){
+    $("#username").focus();
+
     $("#clear").click(function() {
       $.ajax({
         url: "/clear",
         success: function(response) {
           $("#users").fadeThenSlideToggle();
+          // Put in text, hide it again, and then display it
           $(".notice").append(DELETED).hide().fadeThenSlideToggle();
+
+          // Fade out after 4 seconds
           window.setTimeout(function() {
             $(".notice").fadeThenSlideToggle();
           }, 4000);
