@@ -4,7 +4,7 @@ require "models/user.rb"
 
 get "/" do
   @users = User.all
-  erb :index, {:layout => true}
+  haml :index, {:layout => true}
 end
 
 post "/" do

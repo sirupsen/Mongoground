@@ -1,0 +1,26 @@
+- if @user
+  %p
+    = @user.username
+    has been added to the database!
+
+%form{:method => "post", :action => "/"}
+  %label{:for => "username"} Username
+  %input{:type => "text", :name => "username", :id => "username"}
+
+  %label{:for => "age"} Age
+  %select{:name => "age", :id => "age"}
+    - (15..25).each do |n|
+      %option= n
+  
+  %input{:type => "submit", :id => "submit", :value => "Submit"}
+
+%h2 Users
+
+#users
+  - if @users
+    - @users.each do |user|
+      %h3
+        = user.username
+        = "(" + user.age.to_s + ")" if user.age
+
+%a{:href => "#", :id => "clear"} Clear me
