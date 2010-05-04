@@ -217,3 +217,7 @@ ul li ul li ul li {
   color: #999;
   text-shadow: 2px 2px 2px #eee;
 }
+
+.hide {
+  display: none;
+}

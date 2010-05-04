@@ -1,10 +1,23 @@
+var DELETED = "Deleted all entries"
+
+jQuery.fn.fadeThenSlideToggle = function(speed, easing, callback) {
+  if (this.is(":hidden")) {
+    return this.slideDown(speed, easing).fadeTo(speed, 1, easing, callback);
+  } else {
+    return this.fadeTo(speed, 0, easing).slideUp(speed, easing, callback);
+  }
+};
+
 $(function(){
     $("#clear").click(function() {
       $.ajax({
         url: "/clear",
         success: function(response) {
-          $("#users").fadeOut("slow");
-          $("#notice").append("<h2>Deleted all entries</h2>").hide().fadeIn("slow"); 
+          $("#users").fadeThenSlideToggle();
+          $(".notice").append(DELETED).hide().fadeThenSlideToggle();
+          window.setTimeout(function() {
+            $(".notice").fadeThenSlideToggle();
+          }, 4000);
         }
       });
     });
