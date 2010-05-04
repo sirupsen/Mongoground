@@ -1,6 +1,8 @@
-require "sinatra"
-require "erb"
-require "models/user.rb"
+%w{
+  sinatra
+  erb
+  models/user.rb
+}.each {|lib| require lib}
 
 configure do
   set :haml, {:format => :html5}
