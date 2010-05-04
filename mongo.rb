@@ -18,6 +18,19 @@ post "/" do
   @user = User.create(params)
 end
 
+get "/user/:id" do
+  @user = User.find_by_id(params[:id])
+
+  haml :user, {:layout => true}
+end
+
+post "/user/:id" do
+  @user = User.find_by_id(params[:id])
+  @user.update_attributes(params)
+
+  redirect "/user/" + params[:id]
+end
+
 get "/clear" do
   User.delete_all
 end

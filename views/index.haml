@@ -22,7 +22,7 @@
   - if @users
     - @users.each do |user|
       %h3
-        = user.username
+        %a{:href => "/user/" + user.id.to_s }= user.username
         = "(" + user.age.to_s + ")" if user.age
 
 %a{:href => "#", :id => "clear"} Clear me
