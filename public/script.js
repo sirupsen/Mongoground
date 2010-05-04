@@ -8,6 +8,15 @@ jQuery.fn.fadeThenSlideToggle = function(speed, easing, callback) {
   }
 };
 
+function noticeMessage(message) {
+  $(".notice").append(message).hide().fadeThenSlideToggle();
+
+  // Fade out after 3 seconds
+  window.setTimeout(function() {
+    $(".notice").fadeThenSlideToggle();
+  }, 2500);
+};
+
 $(function(){
     $("#username").focus();
 
@@ -16,13 +25,7 @@ $(function(){
         url: "/clear",
         success: function(response) {
           $("#users").fadeThenSlideToggle();
-          // Put in text, hide it again, and then display it
-          $(".notice").append(DELETED).hide().fadeThenSlideToggle();
-
-          // Fade out after 4 seconds
-          window.setTimeout(function() {
-            $(".notice").fadeThenSlideToggle();
-          }, 4000);
+          noticeMessage(DELETED)
         }
       });
     });
