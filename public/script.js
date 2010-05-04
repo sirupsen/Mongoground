@@ -1,4 +1,5 @@
 var DELETED = "Deleted all entries"
+var ERROR = "Error adding user"
 
 jQuery.fn.fadeThenSlideToggle = function(speed, easing, callback) {
   if (this.is(":hidden")) {
@@ -40,6 +41,9 @@ $(function(){
         data: "username=" + username + "&age=" + age,
         success: function(response){
           location.reload();
+        },
+        error: function(response) {
+          noticeMessage(ERROR);
         }
       });
 
