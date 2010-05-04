@@ -20,4 +20,3 @@ end
 get "/clear" do
   User.delete_all
 end
-
