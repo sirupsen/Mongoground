@@ -1,0 +1,22 @@
+%h2
+  = @user.username
+
+- if @user.age
+  %p
+    Is
+    = @user.age
+    years old.
+
+#edit-user
+  %form{:action => "/user/" + @user.id.to_s, :method => "post"}
+    %p
+      %label{:for => "username"} Username
+      %input{:type => "text", :name => "username", :id => "username", :value => @user.username}
+
+      %label{:for => "age"} Age
+      %select{:name => "age", :id => "age"}
+        %option
+        - (15..25).each do |n|
+          %option= n
+      
+      %input{:type => "submit", :value => "Save"}
